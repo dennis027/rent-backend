@@ -63,7 +63,8 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
-    "http://127.0.0.1:4200"
+    "http://127.0.0.1:4200",
+    "https://dennis027.github.io",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
