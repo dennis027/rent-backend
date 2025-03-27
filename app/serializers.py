@@ -8,14 +8,14 @@ class ClientSerializer(serializers.ModelSerializer):
 
 
 class HouseSerializer(serializers.ModelSerializer):
-    client = ClientSerializer(read_only=True)  # Show client details in response
-    client_id = serializers.PrimaryKeyRelatedField(
-        queryset=Client.objects.all(), write_only=True, source='client'
-    )  # Allow assigning a client by ID
+    # client = ClientSerializer(read_only=True)  # Show client details in response
+    # client_id = serializers.PrimaryKeyRelatedField(
+    #     queryset=Client.objects.all(), write_only=True, source='client'
+    # )  # Allow assigning a client by ID
 
     class Meta:
         model = House
-        fields = ['id', 'house_number', 'due_date', 'rent_amount', 'client', 'client_id']
+        fields = ['id', 'house_number', 'due_date', 'rent_amount','last_reading']
 
 
 class ReceiptSerializer(serializers.ModelSerializer):
