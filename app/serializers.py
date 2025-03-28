@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Client, House,Receipt
+from .models import Client, House,Receipt,SystemVariable
 
 class ClientSerializer(serializers.ModelSerializer):
     class Meta:
@@ -27,3 +27,9 @@ class ReceiptSerializer(serializers.ModelSerializer):
     class Meta:
         model = Receipt
         fields = '__all__'
+
+
+class SystemVariableSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SystemVariable
+        fields = ['unit_cost', 'base_value']  # Exclude ID

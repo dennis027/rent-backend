@@ -53,3 +53,8 @@ class Receipt(models.Model):
 
     def __str__(self):
         return f"Receipt {self.receipt_number} - {self.client.username}"
+
+
+class SystemVariable(models.Model):
+    unit_cost = models.IntegerField()
+    base_value = models.IntegerField()

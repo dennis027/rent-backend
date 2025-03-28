@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ClientListCreateView, ClientDetailView, HouseListCreateView, HouseDetailView,ReceiptListCreateView,ReceiptDetailView,register_view, login_view, logout_view
+from .views import ClientListCreateView, ClientDetailView, HouseListCreateView, HouseDetailView,ReceiptListCreateView,ReceiptDetailView,register_view, login_view, logout_view,SystemVariableDetailView
 from rest_framework_simplejwt.views import TokenRefreshView
 
 urlpatterns = [
@@ -13,4 +13,5 @@ urlpatterns = [
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('system-variables/', SystemVariableDetailView.as_view(), name='system-variable-detail'),
 ]

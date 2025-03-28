@@ -1,6 +1,6 @@
 from rest_framework import generics
 from .models import Client, House,Receipt
-from .serializers import ClientSerializer, HouseSerializer,ReceiptSerializer
+from .serializers import ClientSerializer, HouseSerializer,ReceiptSerializer,SystemVariableSerializer,SystemVariable
 from django.contrib.auth.models import User
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -91,3 +91,11 @@ class ReceiptDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Receipt.objects.all()
     serializer_class = ReceiptSerializer
     permission_classes = [IsAuthenticated] 
+
+
+class SystemVariableDetailView(generics.RetrieveUpdateAPIView):
+    serializer_class = SystemVariableSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        return SystemVariable.objects.first() 
